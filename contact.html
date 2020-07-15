@@ -15,29 +15,21 @@
       <h1>お問い合わせ</h1>
       <div class="contact-form">
         <form action="index.html" method="post">
-          <table class="contact_form" align="center">
-            <tr>
-              <th>お名前</th>
-              <td><input type="text" class="form"></td>
-            </tr>
-            <tr>
-              <th>メールアドレス</th>
-              <td><input type="text" class="form"></td>
-            </tr>
-            <tr>
-              <th>性別</th>
-              <td><input type="checkbox">男
-                　<input type="checkbox">女</td>
-            </tr>
-            <tr>
-              <th>住所</th>
-              <td><input type="text" class="form"></td>
-            </tr>
-            <tr>
-              <th>お問い合わせ内容</th>
-              <td><textarea class="form textarea"></textarea></td>
-            </tr>
-          </table>
+          <!-- <table class="contact_form" align="center"> -->
+            <dl id = "accordion">
+              <dt>お名前</dt>
+              <dd><input type="text" class="form" placeholder="山田太郎"></dd>
+              <dt>メールアドレス</dt>
+              <dd><input type="text" class="form" placeholder="yamada@tarou.com"></dd>
+              <dt>性別</dt>
+              <dd><input type="checkbox">男
+                　<input type="checkbox">女</dd>
+              <dt>住所</dt>
+              <dd><input type="text" class="form" placeholder="東京都港区南xx-xx-xx"></dd>
+              <dt>お問い合わせ内容</dt>
+              <dd><textarea class="form textarea" placeholder="お問い合わせ内容を入力してください"></textarea></dd>
+            </dl>
+          <!-- </table> -->
           <div class="submit">
             <input type="submit" value="入力内容確認" class="submit-btn">
           </div>
@@ -47,6 +39,15 @@
     <footer>
       <p>Copyright © parework 1.</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>
+      $(function(){
+        $("#accordion dd").hide();
+        $("#accordion dt").on("click", function(){
+          $(this).next("dd").slideToggle("slow");
+        });
+      });
+    </script>
   </body>
   </div>
 </html>
